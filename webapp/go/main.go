@@ -245,7 +245,7 @@ func main() {
 	e.Logger.SetLevel(log.DEBUG)
 
 	var err error
-	fp, err := os.OpenFile("app.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
+	fp, err := os.OpenFile("/go/log/app.log", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
 	if err != nil {
 		panic(err)
 	}

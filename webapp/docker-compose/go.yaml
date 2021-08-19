@@ -27,6 +27,7 @@ services:
     volumes:
       - ../mysql/db:/go/src/mysql/db
       - ../fixture:/go/src/fixture
+      - ../log:/go/log
     environment:
       MYSQL_DBNAME: isuumo
       MYSQL_USER: isucon
@@ -48,6 +49,7 @@ services:
     build: ../nginx
     volumes:
         - ../../provisioning/ansible/roles/web-bootstrap/files/nginx.conf.template:/etc/nginx/nginx.conf.template
+        - ../../provisioning/ansible/roles/web-bootstrap/files/nginx.conf:/etc/nginx/nginx.conf
         - ../logs/nginx:/var/log/nginx
         - ../nginx/conf.d:/etc/nginx/conf.d
         - ../nginx/out:/www/data
